@@ -57,3 +57,9 @@ def view_meal(request, meal_id):
 		'meal' : meal,
 	}
 	return render(request, template, context)
+
+def login(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse_lazy('food:index'))
+    else:
+        return HttpResponseRedirect(reverse_lazy('auth_login'))
