@@ -20,6 +20,10 @@
 					<th></th>
 				</tr>
 			</thead>
+			
+			{% if meals | length > 3 %}
+				<h5>You have at least 4 meals!</h5>
+			{% endif %}
 
 			<tbody>
 				{% for meal in meals %}
