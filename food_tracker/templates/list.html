@@ -4,16 +4,17 @@
 	</head>
 
 	<body>
-		<h2>My Food Tracker</h2>
+	    </br>
+		<h2 class="text-secondary">My Food Tracker</h2></br>
 
-		<a href="{% url 'food:add-meal' %}" class="btn btn-success">Add Meal</a> <br /><br />
+		<a href="{% url 'food:add-meal' %}" class="btn btn-success btn-lg">Add Meal</a> <br /><br />
 
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>
-					<th>Food</th>
-					<th>Meal Time</th>
-					<th>Total Calories</th>
+					<th class="text-info">Food</th>
+					<th class="text-primary">Meal Time</th>
+					<th class="text-danger">Total Calories</th>
 					<th></th>
 					<th></th>
 					<th></th>
@@ -23,17 +24,17 @@
 			<tbody>
 				{% for meal in meals %}
 				<tr>
-					<td>{{ meal.food.name }}</td>
+					<td class="text-uppercase"> {{ forloop.counter }} - {{ meal.food.name }} </td>
 					<td>{{ meal.get_meal_time_display }}</td>
 					<td>{{ meal.get_total_calories }} kcal</td>
 					<td>
-						<a href="{% url 'food:view-meal' meal.id %}" class="btn btn-info">View</a>
+						<a href="{% url 'food:view-meal' meal.id %}" class="btn btn-outline-info">View</a>
 					</td>
 					<td>
-						<a href="{% url 'food:update-meal' meal.id %}" class="btn btn-primary">Update</a>
+						<a href="{% url 'food:update-meal' meal.id %}" class="btn btn-outline-primary">Update</a>
 					</td>
 					<td>
-						<a href="{% url 'food:delete-meal' meal.id %}" class="btn btn-danger">Delete</a>
+						<a href="{% url 'food:delete-meal' meal.id %}" class="btn btn-outline-danger">Delete</a>
 					</td>
 				</tr>
 
