@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<h2>Meal Details</h2>
+
+		<form role="form" action="" method="POST">
+			{% csrf_token %}
+
+			<h5>{{ meal.food.name }}</h5>
+
+			<table class="table table-striped table-bordered">
+
+				<tr>
+					<td>Calories</td>
+					<td>{{ meal.food.calories }} kcal</td>
+				</tr>
+
+				<tr>
+					<td>Serving Size</td>
+					<td>{{ meal.serving_size }}</td>
+				</tr>
+
+				<tr>
+					<td>Total Fat</td>
+					<td>{{ meal.food.total_fat }} g</td>
+				</tr>
+
+				<tr>
+					<td>Saturated Fat</td>
+					<td>{{ meal.food.saturated_fat }} g</td>
+				</tr>
+
+				<tr>
+					<td>Cholesterol</td>
+					<td>{{ meal.food.cholesterol }} mg</td>
+				</tr>
+
+				<tr>
+					<td>Sodium</td>
+					<td>{{ meal.food.sodium }} mg</td>
+				</tr>
+
+				<tr>
+					<td>Total Carbohydrates</td>
+					<td>{{ meal.food.total_carbohydrate }} g</td>
+				</tr>
+
+				<tr>
+					<td>Dietary Fiber</td>
+					<td>{{ meal.food.dietary_fibre }} g</td>
+				</tr>
+
+				<tr>
+					<td>Sugar</td>
+					<td>{{ meal.food.sugar }} g</td>
+				</tr>
+
+				<tr>
+					<td>Protein</td>
+					<td>{{ meal.food.protein }} g</td>
+				</tr>
+
+			</table>
+
+			<a href="{% url 'food:index' %}" class="btn btn-info">Back</a>
+
+	</body>
+</html>
